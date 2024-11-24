@@ -10,16 +10,13 @@ import {
 } from "react-native";
 import { colors } from "../styles/global";
 import image from "../assets/images/noforest.jpg";
-import avatar_1 from "../assets/images/avatar.jpg";
 import CommentCard from "../components/CommentCard";
 import { TextInput } from "react-native-gesture-handler";
 import ArrowBackIcon from "../icons/ArrowBackIcon";
 import { useRoute } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import {
-  addDoc,
   arrayUnion,
-  collection,
   doc,
   onSnapshot,
   updateDoc,

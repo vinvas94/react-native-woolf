@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import PlusIcon from '../assets/PlusIcon'; 
+import PlusIcon from '../icons/PlusIcon'; 
 import { colors } from '../styles/global';
 
 const AddButton = () => {

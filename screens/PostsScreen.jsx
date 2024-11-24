@@ -2,9 +2,8 @@ import { FlatList, Image, StyleSheet, Text, View } from "react-native";
 import { colors } from "../styles/global";
 import avatarImage from "../assets/images/avatar.jpg";
 import PostCard from "../components/PostCard";
-import woodsImage from "../assets/images/forest.jpg";
+import forest from "../assets/images/forest.jpg";
 import { useEffect, useState } from "react";
-// import { posts } from "../utils/mockData";
 import { collection, getDocs, onSnapshot } from "firebase/firestore";
 import { db } from "../config";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,8 +17,7 @@ const PostsScreen = () => {
     onSnapshot(collection(db, "posts"), (snapshot) => {
       const data = snapshot.docs.map((doc) => ({
         id: doc.id,
-        // preview: doc.data().preview || woodsImage,
-        preview: woodsImage,
+        preview: forest,
         name: doc.data().name || "Noname",
         comments: doc.data().comments || [],
         place: doc.data().place || "no where",
@@ -38,8 +36,8 @@ const PostsScreen = () => {
           style={styles.userAvatar}
         />
         <View>
-          <Text style={styles.userName}>Natali Romanova</Text>
-          <Text style={styles.userEmail}>email@example.com</Text>
+          <Text style={styles.userName} >User</Text>
+          <Text style={styles.userEmail}>test@gmail.com</Text>
         </View>
       </View>
       <View style={styles.list}>

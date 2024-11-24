@@ -4,11 +4,11 @@
     "slug": "react-native-woolf",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/background.jpg",
+      "image": "./assets/images/background.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,16 +17,24 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
-      
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_MEDIA_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ],
+      "package": "com.vinvas94.reactnativewoolf"
     },
-    "softwareKeyboardLayoutMode": "pan",
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/images/favicon.png"
     },
-   "plugins": [
+    "plugins": [
       "expo-font",
       [
         "expo-camera",
@@ -51,6 +59,13 @@
         }
       ]
     ],
-    "assetBundlePatterns": ["assets/fonts/*"]
+    "assetBundlePatterns": [
+      "assets/fonts/*"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "9334b91e-719b-4cdc-a866-88eb77a3fd9a"
+      }
+    }
   }
 }

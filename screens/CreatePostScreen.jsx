@@ -29,6 +29,7 @@ const CreatePostScreen = () => {
   const [preview, setPreview] = useState(null);
   const [name, setName] = useState("Post name");
   const [place, setPlace] = useState("Kyiv");
+
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
   const navigation = useNavigation();
@@ -43,6 +44,7 @@ const CreatePostScreen = () => {
       setLocation(location);
     })();
   }, []);
+
   const onPublishHandler = async () => {
     try {
       const docRef = await addDoc(
@@ -56,7 +58,6 @@ const CreatePostScreen = () => {
         { merge: true }
       );
     } catch (e) {
-      console.error("Error adding document: ", e);
     }
 
     navigation.navigate("Posts");

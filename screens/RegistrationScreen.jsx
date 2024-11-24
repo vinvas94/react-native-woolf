@@ -18,7 +18,6 @@ import Icon from "react-native-vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
 import AddAvatarButton from "../components/AddAvatarButton";
 import {
-  getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
@@ -65,9 +64,7 @@ const RegistrationScreen = () => {
       if (error.code === "auth/email-already-in-use") {
         alert("Email in use");
       }
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(error, error.code);
+    
     }
   };
   return (
@@ -77,22 +74,13 @@ const RegistrationScreen = () => {
         behavior={Platform.OS === "ios" ? "height" : "padding"}
       >
         <Image
-          source={require("../assets/images/background.jpg")}
+          source={require("../assets/images/background.png")}
           style={styles.image}
           resizeMode="cover"
         />
         <View style={styles.formContainer}>
-        {/* <View style={styles.avatarWrapper}>
-            <TouchableOpacity style={styles.addButton}>
-              <Icon name="plus" size={16} style={styles.addButtonIcon} />
-            </TouchableOpacity>
-          </View> */}
           <AddAvatarButton />
-            <TouchableOpacity style={styles.addButton}>
-              <Icon name="plus" size={16} style={styles.addButtonIcon} />
-            </TouchableOpacity>
-        
-          <Text style={styles.title}>Реєстрація</Text>
+                  <Text style={styles.title}>Реєстрація</Text>
           <View style={[styles.innerContainer, styles.inputContainer]}>
             <Input
               placeholder="Логін"
@@ -219,6 +207,5 @@ const styles = StyleSheet.create({
     borderColor: colors.orange,
     borderWidth: 1,
   },
-  addButtonIcon: { color: colors.orange },
 });
 export default RegistrationScreen;
